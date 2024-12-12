@@ -21,7 +21,7 @@
    (-> ctx
        (merge #:base{:title settings/app-name
                      :lang "en-US"
-                     :icon "/img/glider.png"
+                     :icon "/img/logo.png"
                      :description (str settings/app-name " Description")
                      :image "https://clojure.org/images/clojure-logo-120b.png"})
        (update :base/head (fn [head]
@@ -30,6 +30,8 @@
                                      [:script {:src "https://unpkg.com/htmx.org@1.9.12"}]
                                      [:script {:src "https://unpkg.com/htmx.org@1.9.12/dist/ext/ws.js"}]
                                      [:script {:src "https://unpkg.com/hyperscript.org@0.9.8"}]
+                                     [:script {:src "https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" :defer ""}]
+                                     [:script {:src "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"}]
                                      (when recaptcha
                                        [:script {:src "https://www.google.com/recaptcha/api.js"
                                                  :async "async" :defer "defer"}])]
@@ -39,14 +41,8 @@
 (defn page [ctx & body]
   (base
    ctx
-   [:.flex-grow]
-   [:.p-3.mx-auto.max-w-screen-sm.w-full
-    (when (bound? #'csrf/*anti-forgery-token*)
-      {:hx-headers (cheshire/generate-string
-                    {:x-csrf-token csrf/*anti-forgery-token*})})
-    body]
-   [:.flex-grow]
-   [:.flex-grow]))
+   body
+   ))
 
 (defn on-error [{:keys [status ex] :as ctx}]
   {:status status
