@@ -2,13 +2,15 @@
   (:require [com.ch7ck.middleware :as mid]
             [com.ch7ck.ui :as ui]
             [com.ch7ck.components.headers :as headers]
-            [com.ch7ck.components.timelines :as timelines]))
+            [com.ch7ck.components.timelines :as timelines]
+            [com.ch7ck.components.features :as features]))
 
 (defn home-page [ctx]
   (ui/page
    ctx
    (headers/header)
-   (timelines/timeline)))
+   (timelines/timeline)
+   (features/feature)))
 
 
 

@@ -4,7 +4,7 @@
   [:section
    {:class "bg-gray-100 text-gray-800"}
    [:div
-    {:class "container px-4 py-12 mx-auto"}
+    {:class "max-w-screen-xl px-4 py-12 mx-auto"}
     [:div
      {:class "grid gap-4 mx-4 sm:grid-cols-12"}
      [:div
