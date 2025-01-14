@@ -3,14 +3,17 @@
             [com.ch7ck.ui :as ui]
             [com.ch7ck.components.headers :as headers]
             [com.ch7ck.components.timelines :as timelines]
-            [com.ch7ck.components.features :as features]))
+            [com.ch7ck.components.features :as features]
+            [com.ch7ck.components.footers :as footers]))
 
 (defn home-page [ctx]
   (ui/page
    ctx
    (headers/header)
+   (features/features)
+   (features/human-features)
    (timelines/timeline)
-   (features/feature)))
+   (footers/footer)))
 
 
 

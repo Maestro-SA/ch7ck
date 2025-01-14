@@ -3,9 +3,11 @@
             [com.ch7ck.email :as email]
             [com.ch7ck.app :as app]
             [com.ch7ck.home :as home]
+            [com.ch7ck.about :as about]
+            [com.ch7ck.blog :as blog]
+            [com.ch7ck.contact :as contact]
             [com.ch7ck.middleware :as mid]
             [com.ch7ck.ui :as ui]
-            [com.ch7ck.worker :as worker]
             [com.ch7ck.schema :as schema]
             [clojure.test :as test]
             [clojure.tools.logging :as log]
@@ -19,8 +21,10 @@
   [app/module
    (biff/authentication-module {})
    home/module
-   schema/module
-   worker/module])
+   about/module
+   blog/module
+   contact/module
+   schema/module])
 
 (def routes [["" {:middleware [mid/wrap-site-defaults]}
               (keep :routes modules)]
