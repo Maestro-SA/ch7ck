@@ -54,7 +54,7 @@
      [:div
       {:class "mt-6"}
       [:a
-       {:href "#",
+       {:href "/about-me",
         :class "px-6 py-2.5 mt-8 text-sm font-medium leading-5 text-center text-white capitalize bg-gray-800 rounded-lg lg:mx-0 lg:w-auto focus:outline-none"}
        "Read more"]]]]
    [:div
