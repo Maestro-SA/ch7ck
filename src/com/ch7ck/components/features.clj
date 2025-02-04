@@ -6,8 +6,8 @@
 (defn feature [& {:keys [svg name attrs link]}]
   [:div
    [:div
-    {:class "flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50"}
-    [:div {:class "p-4"} 
+    {:class "flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-gray-600"}
+    [:div {:class "p-3"} 
      svg]]
    [:h6 {:class "mb-2 font-semibold leading-5"} name]
    [:ul
@@ -22,8 +22,11 @@
    [:a
     {:href link,
      :aria-label "",
-     :class "inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800 cursor-pointer"}
-    "Learn more"]])
+     :class "inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-gray-600 hover:text-gray-800"}
+    [:p
+     {:class "flex items-center hover:space-x-2"}
+     "Learn more"
+     (svg/arrow)]]])
 
 (defn features []
   [:div
@@ -43,7 +46,7 @@
    [:div
     {:class "grid gap-8 row-gap-10 sm:grid-cols-2 lg:grid-cols-4"}
     (feature
-     :svg (svg/code)
+     :svg (svg/lisp)
      :name "Languages & Paradigms" 
      :attrs ["Clojure" "ClojureScript"]
      :link "/about-me#languages-paradigms")
@@ -137,9 +140,9 @@
      [:div
       {:class "w-full mx-auto"}
       [:div 
-       {:class "w-16 h-16"}
+       {:class "w-14 h-14 mb-2"}
        [:span
-       {:class "hidden md:inline-block p-2 bg-gray-100 rounded-full"}
+       {:class "hidden md:inline-block p-2 bg-gray-600 rounded-xl"}
        svg]]
       (shared/heading name)
       [:p
@@ -164,7 +167,7 @@
    {:class "px-4 pb-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pb-16"}
    (skill
     :id "languages-paradigms"
-    :svg (svg/code)
+    :svg (svg/lisp)
     :name "Languages & Paradigms"
     :desc "Developing software with Clojure, ClojureScript, and other modern languages and paradigms."
     :attrs [{:attr-name "Clojure"
@@ -201,6 +204,22 @@
             {:attr-name "DevOps Practices"
              :attr-desc "Familiar with CI/CD automation and containerization using Docker."}])])
 
+(defn human-feature [& {:keys [svg name desc]}]
+  [:div
+   {:class "xl:w-1/3 md:w-1/2 p-4"}
+   [:div
+    {:class "border border-gray-300 p-6 rounded-xl"}
+    [:div
+     {:class "w-14 h-14 inline-flex items-center justify-center rounded-xl bg-gray-600 text-gray-500 mb-4"}
+     [:span {:class "p-3"}
+      svg]]
+    [:h2
+     {:class "text-xl font-medium title-font mb-2"}
+     name]
+    [:p
+     {:class "leading-relaxed text-md"}
+     desc]]])
+
 (defn human-features [] 
   [:div
    [:section
@@ -217,45 +236,15 @@
        "I'm a software engineer with a passion for building scalable, maintainable systems that solve real-world problems. I specialize in Clojure and ClojureScript development, with experience in frontend and backend technologies."]]
      [:div
       {:class "flex flex-wrap -m-4"}
-      [:div
-       {:class "xl:w-1/3 md:w-1/2 p-4"}
-       [:div
-        {:class "border border-gray-300 p-6 rounded-lg"}
-        [:div
-         {:class "w-14 h-14 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4"}
-         [:span {:class "p-2"}
-          (svg/collaboration)]]
-        [:h2
-         {:class "text-xl font-medium title-font mb-2"}
-         "Team Collaboration"]
-        [:p
-         {:class "leading-relaxed text-md"}
-         "Collaborative team player with a strong focus on effective communication and teamwork."]]]
-      [:div
-       {:class "xl:w-1/3 md:w-1/2 p-4"}
-       [:div
-        {:class "border border-gray-300 p-6 rounded-lg"}
-        [:div
-         {:class "w-14 h-14 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4 italic"}
-         [:span {:class "p-2"} 
-          (svg/mentorship)]]
-        [:h2
-         {:class "text-xl font-medium title-font mb-2"}
-         "Mentorship"]
-        [:p
-         {:class "leading-relaxed text-md"}
-         "Experienced in mentoring and guiding junior developers to enhance team capabilities."]]]
-      [:div
-       {:class "xl:w-1/3 md:w-1/2 p-4"}
-       [:div
-        {:class "border border-gray-300 p-6 rounded-lg"}
-        [:div
-         {:class "w-14 h-14 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4"}
-         [:span {:class "p-2"}
-          (svg/clean-code)]]
-        [:h2
-         {:class "text-xl font-medium title-font mb-2"}
-         "Clean Code Advocate"]
-        [:p
-         {:class "leading-relaxed text-md"}
-         "Passionate about writing clean, maintainable, and functional code for long-term success."]]]]]]])
+      (human-feature
+       :svg (svg/collaboration)
+       :name "Team Collaboration"
+       :desc "Collaborative team player with a strong focus on effective communication and teamwork.")
+      (human-feature
+       :svg (svg/mentorship)
+       :name "Mentorship"
+       :desc "Experienced in mentoring and guiding junior developers to enhance team capabilities.")
+      (human-feature
+       :svg (svg/code)
+       :name "Clean Code Advocate"
+       :desc "Passionate about writing clean, maintainable, and functional code for long-term success.")]]]])

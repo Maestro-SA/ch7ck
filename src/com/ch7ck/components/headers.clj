@@ -39,7 +39,7 @@
 
 (defn header []
   [:header
-   {:class '("bg-[url('https://images.unsplash.com/photo-1460602594182-8568137446ce?q=80&w=2676&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]"
+   {:class '("bg-[url('https://images.unsplash.com/photo-1594922234647-4ade6282c369?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]"
              bg-cover bg-no-repeat)}
    (navbar)
    (heros/hero)])

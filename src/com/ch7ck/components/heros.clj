@@ -60,8 +60,8 @@
    [:div
     {:class "hidden md:flex items-center justify-center w-full h-[42rem] lg:w-1/2"}
     [:img
-     {:class "object-cover w-full h-full max-w-2xl rounded-full",
-      :src "https://images.unsplash.com/photo-1588495756505-5437763146dd?q=80&w=2788&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+     {:class "object-cover w-full max-w-2xl rounded-full aspect-square",
+      :src "https://images.unsplash.com/photo-1586745370973-343d1ba81ed2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       :alt "apple keyboard and mouse"}]]])
 
 (defn page-hero [title]
