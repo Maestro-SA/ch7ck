@@ -13,7 +13,7 @@
     [:div
      {:class "text-center"} 
      [:h1
-      {:class "mt-2 text-2xl font-semibold text-gray-800 md:text-3xl"}
+      {:class "mt-2 text-2xl font-semibold text-gray-900 md:text-3xl"}
       "Get in touch"]
      [:p
       {:class "mt-3 text-gray-500"}
@@ -26,7 +26,7 @@
        {:class "p-3 text-black rounded-full bg-gray-600"}
        (svgs/email)]
       [:h2
-       {:class "mt-4 text-lg font-medium text-gray-800"}
+       {:class "mt-4 text-lg font-medium text-gray-900"}
        "Email"]
       [:p
        {:class "mt-2 text-gray-500"}
@@ -41,7 +41,7 @@
        {:class "p-3 text-blue-500 rounded-full bg-gray-600"}
        (svgs/linkedin)]
       [:h2
-       {:class "mt-4 text-lg font-medium text-gray-800"}
+       {:class "mt-4 text-lg font-medium text-gray-900"}
        "LinkedIn"]
       [:p
        {:class "mt-2 text-gray-500"}
@@ -56,7 +56,7 @@
        {:class "p-3 text-black rounded-full bg-gray-600"}
        (svgs/phone)]
       [:h2
-       {:class "mt-4 text-lg font-medium text-gray-800"}
+       {:class "mt-4 text-lg font-medium text-gray-900"}
        "Phone"]
       [:p
        {:class "mt-2 text-gray-500"}

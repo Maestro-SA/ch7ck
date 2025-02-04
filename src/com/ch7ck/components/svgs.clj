@@ -56,7 +56,7 @@
 
 (defn lightning []
   [:svg
-   {:class "w-5 h-5 mt-px text-gray-800",
+   {:class "w-5 h-5 mt-px text-gray-900",
     :stroke "currentColor",
     :viewBox "0 0 52 52"}
    [:polygon

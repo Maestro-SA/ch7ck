@@ -6,7 +6,7 @@
 (defn blog-modal [& {:keys [category title body]}] 
   [:div
    {:x-show "showModal",
-    :class "fixed text-gray-800 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0",
+    :class "fixed text-gray-900 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0",
     :x-transition:enter "transition ease duration-300",
     :x-transition:enter-start "opacity-0",
     :x-transition:enter-end "opacity-100",

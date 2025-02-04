@@ -11,30 +11,30 @@
     [:a
      {:href "/", :class "mx-auto"}
      [:img
-      {:class "w-auto h-16 sm:h-20",
+      {:class "w-auto w-32 sm:w-60",
        :src "/img/logo.png",
        :alt ""}]]
     [:div
-     {:class "flex items-center justify-center mt-6 text-gray-800 capitalize"}
+     {:class "flex items-center justify-center mt-6 text-gray-900 capitalize"}
      [:a
       {:href "/",
-       :class "mx-2 text-gray-800 sm:mx-6 hover:border-b-2 hover:border-gray-800"
-       :x-bind:class "{ 'border-b-2 border-gray-800': currentPath === '/' }"}
+       :class "mx-2 text-gray-900 sm:mx-6 hover:border-b-2 hover:border-gray-900"
+       :x-bind:class "{ 'border-b-2 border-gray-900': currentPath === '/' }"}
       "home"]
      [:a
       {:href "/about-me",
-       :class "mx-2 text-gray-800 sm:mx-6 hover:border-b-2 hover:border-gray-800"
-       :x-bind:class "{ 'border-b-2 border-gray-800': currentPath === '/about-me' }"}
+       :class "mx-2 text-gray-900 sm:mx-6 hover:border-b-2 hover:border-gray-900"
+       :x-bind:class "{ 'border-b-2 border-gray-900': currentPath === '/about-me' }"}
       "about"]
      [:a
       {:href "/blog",
-       :class "mx-2 text-gray-800 sm:mx-6 hover:border-b-2 hover:border-gray-800"
-       :x-bind:class "{ 'border-b-2 border-gray-800': currentPath === '/blog' }"}
+       :class "mx-2 text-gray-900 sm:mx-6 hover:border-b-2 hover:border-gray-900"
+       :x-bind:class "{ 'border-b-2 border-gray-900': currentPath === '/blog' }"}
       "blog"]
      [:a
       {:href "/contact-me",
-       :class "mx-2 text-gray-800 sm:mx-6 hover:border-b-2 hover:border-gray-800"
-       :x-bind:class "{ 'border-b-2 border-gray-800': currentPath === '/contact-me' }"}
+       :class "mx-2 text-gray-900 sm:mx-6 hover:border-b-2 hover:border-gray-900"
+       :x-bind:class "{ 'border-b-2 border-gray-900': currentPath === '/contact-me' }"}
       "contact"]]]])
 
 (defn header []

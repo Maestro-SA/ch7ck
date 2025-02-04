@@ -6,7 +6,7 @@
 (defn feature [& {:keys [svg name attrs link]}]
   [:div
    [:div
-    {:class "flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-gray-600"}
+    {:class "flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-metagray"}
     [:div {:class "p-3"} 
      svg]]
    [:h6 {:class "mb-2 font-semibold leading-5"} name]
@@ -22,7 +22,7 @@
    [:a
     {:href link,
      :aria-label "",
-     :class "inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-gray-600 hover:text-gray-800"}
+     :class "inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-metagray hover:text-metagray"}
     [:p
      {:class "flex items-center hover:space-x-2"}
      "Learn more"
@@ -36,7 +36,7 @@
     [:div
      {:class "lg:w-1/2"}
      [:h2
-      {:class "max-w-md mb-6 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl sm:leading-none xl:max-w-lg"}
+      {:class "max-w-md mb-6 text-4xl font-bold tracking-tight text-metagray sm:text-5xl sm:leading-none xl:max-w-lg"}
       "Technical Landscape"]]
     [:div
      {:class "lg:w-1/2"}
@@ -79,7 +79,7 @@
       [:div
        {:class "space-y-3"}
        [:span
-        {:class "inline-block p-3 text-gray-600 bg-gray-600 rounded-xl"}
+        {:class "inline-block p-3 text-metagray bg-metagray rounded-xl"}
         (svg/laptop-code)]
        [:h1
         {:class "text-xl font-semibold text-gray-700 capitalize"}
@@ -90,7 +90,7 @@
       [:div
        {:class "space-y-3"}
        [:span
-        {:class "inline-block p-3 text-gray-800 bg-gray-600 rounded-xl"}
+        {:class "inline-block p-3 text-metagray bg-metagray rounded-xl"}
         (svg/frontend)]
        [:h1
         {:class
@@ -102,7 +102,7 @@
       [:div
        {:class "space-y-3"}
        [:span
-        {:class "inline-block p-3 text-gray-800 bg-gray-600 rounded-xl"}
+        {:class "inline-block p-3 text-metagray bg-metagray rounded-xl"}
         (svg/backend)]
        [:h1
         {:class
@@ -114,7 +114,7 @@
       [:div
        {:class "space-y-3"}
        [:span
-        {:class "inline-block p-3 text-gray-800 bg-gray-600 rounded-xl"}
+        {:class "inline-block p-3 text-metagray bg-metagray rounded-xl"}
         (svg/cloud)]
        [:h1
         {:class "text-xl font-semibold text-gray-700 capitalize"}
@@ -142,11 +142,11 @@
       [:div 
        {:class "w-14 h-14 mb-2"}
        [:span
-       {:class "hidden md:inline-block p-2 bg-gray-600 rounded-xl"}
+       {:class "hidden md:inline-block p-2 bg-metagray rounded-xl"}
        svg]]
       (shared/heading name)
       [:p
-       {:class "text-xl font-light leading-relaxed mt-4 mb-4 text-gray-600"}
+       {:class "text-xl font-light leading-relaxed mt-4 mb-4 text-metagray"}
        desc]
       [:ul 
        {:class "text-lg mb-4 -ml-1 space-y-2"}
@@ -210,7 +210,7 @@
    [:div
     {:class "border border-gray-300 p-6 rounded-xl"}
     [:div
-     {:class "w-14 h-14 inline-flex items-center justify-center rounded-xl bg-gray-600 text-gray-500 mb-4"}
+     {:class "w-14 h-14 inline-flex items-center justify-center rounded-xl bg-metagray text-gray-500 mb-4"}
      [:span {:class "p-3"}
       svg]]
     [:h2
@@ -223,7 +223,7 @@
 (defn human-features [] 
   [:div
    [:section
-    {:class "text-gray-800 bg-white"}
+    {:class "text-metagray bg-white"}
     [:div
      {:class "px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-16"}
      [:div

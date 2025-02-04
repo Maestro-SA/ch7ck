@@ -12,24 +12,24 @@
      {:class "flex justify-start order-2 mt-6 lg:mt-0 lg:space-y-3 lg:flex-col"}
      [:button
       {"x-on:click.prevent" "selectedSlide = 0",
-       :class "w-4 h-4 mx-2 rounded-full lg:mx-0 focus:outline-none hover:bg-gray-800"
-       :x-bind:class "{ 'bg-gray-800': selectedSlide === 0, 'bg-gray-300': selectedSlide !== 0 }"}]
+       :class "w-4 h-4 mx-2 rounded-full lg:mx-0 focus:outline-none hover:bg-gray-900"
+       :x-bind:class "{ 'bg-gray-900': selectedSlide === 0, 'bg-gray-300': selectedSlide !== 0 }"}]
      [:button
       {"x-on:click.prevent" "selectedSlide = 1",
-       :class "w-4 h-4 mx-2 rounded-full lg:mx-0 focus:outline-none hover:bg-gray-800"
-       :x-bind:class "{ 'bg-gray-800': selectedSlide === 1, 'bg-gray-300': selectedSlide !== 1 }"}]
+       :class "w-4 h-4 mx-2 rounded-full lg:mx-0 focus:outline-none hover:bg-gray-900"
+       :x-bind:class "{ 'bg-gray-900': selectedSlide === 1, 'bg-gray-300': selectedSlide !== 1 }"}]
      [:button
       {"x-on:click.prevent" "selectedSlide = 2",
-       :class "w-4 h-4 mx-2 rounded-full lg:mx-0 focus:outline-none hover:bg-gray-800"
-       :x-bind:class "{ 'bg-gray-800': selectedSlide === 2, 'bg-gray-300': selectedSlide !== 2 }"}]
+       :class "w-4 h-4 mx-2 rounded-full lg:mx-0 focus:outline-none hover:bg-gray-900"
+       :x-bind:class "{ 'bg-gray-900': selectedSlide === 2, 'bg-gray-300': selectedSlide !== 2 }"}]
      [:button
       {"x-on:click.prevent" "selectedSlide = 3",
-       :class "w-4 h-4 mx-2 rounded-full lg:mx-0 focus:outline-none hover:bg-gray-800"
-       :x-bind:class "{ 'bg-gray-800': selectedSlide === 3, 'bg-gray-300': selectedSlide !== 3 }"}]]
+       :class "w-4 h-4 mx-2 rounded-full lg:mx-0 focus:outline-none hover:bg-gray-900"
+       :x-bind:class "{ 'bg-gray-900': selectedSlide === 3, 'bg-gray-300': selectedSlide !== 3 }"}]]
     [:div
      {:class "max-w-2xl lg:mx-12 lg:order-2"}
      [:h1
-      {:class "text-6xl text-gray-800 font-semibold tracking-wide bg-white p-2 lg:text-8xl"}
+      {:class "text-6xl text-gray-900 font-semibold tracking-wide bg-white p-2 lg:text-8xl"}
       "Hi, I'm Stha."]
      [:div
       {:x-bind:class "{ 'hidden': selectedSlide !== 0 }"}
@@ -55,7 +55,7 @@
       {:class "mt-6"}
       [:a
        {:href "/about-me",
-        :class "px-6 py-2.5 mt-8 text-sm font-medium leading-5 text-center text-white capitalize bg-gray-800 rounded-lg lg:mx-0 lg:w-auto focus:outline-none"}
+        :class "px-6 py-2.5 mt-8 text-sm font-medium leading-5 text-center text-white capitalize bg-gray-900 rounded-lg lg:mx-0 lg:w-auto focus:outline-none"}
        "Read more"]]]]
    [:div
     {:class "hidden md:flex items-center justify-center w-full h-[42rem] lg:w-1/2"}
@@ -72,5 +72,5 @@
     [:div
      {:class "max-w-2xl lg:mx-12 lg:order-2"}
      [:h1
-      {:class "text-4xl text-gray-800 font-semibold tracking-wide bg-white p-2 lg:text-8xl"}
+      {:class "text-4xl text-gray-900 font-semibold tracking-wide bg-white p-2 lg:text-8xl"}
       title]]]])
