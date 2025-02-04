@@ -66,11 +66,11 @@
 
 (defn page-hero [title]
   [:div
-   {:class "container flex flex-col px-6 pb-4 mx-auto space-y-6 lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center"}
+   {:class "container flex flex-col px-6 pb-4 mx-auto space-y-6 h-[8rem] lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center"}
    [:div
     {:class "flex flex-col items-centre w-full lg:flex-row lg:w-1/2"}
     [:div
      {:class "max-w-2xl lg:mx-12 lg:order-2"}
      [:h1
-      {:class "text-6xl text-gray-800 font-semibold tracking-wide bg-white p-2 lg:text-8xl"}
+      {:class "text-4xl text-gray-800 font-semibold tracking-wide bg-white p-2 lg:text-8xl"}
       title]]]])

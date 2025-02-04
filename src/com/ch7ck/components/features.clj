@@ -3,7 +3,7 @@
             [com.ch7ck.components.shared :as shared]))
 
 
-(defn feature [& {:keys [svg name attrs]}]
+(defn feature [& {:keys [svg name attrs link]}]
   [:div
    [:div
     {:class "flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50"}
@@ -20,10 +20,9 @@
         (svg/lightning)]
        attr])]
    [:a
-    {:href "/",
+    {:href link,
      :aria-label "",
-     :class
-     "inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"}
+     :class "inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800 cursor-pointer"}
     "Learn more"]])
 
 (defn features []
@@ -46,19 +45,23 @@
     (feature
      :svg (svg/code)
      :name "Languages & Paradigms" 
-     :attrs ["Clojure" "ClojureScript"])
+     :attrs ["Clojure" "ClojureScript"]
+     :link "/about-me#languages-paradigms")
     (feature
      :svg (svg/clojurescript)
      :name "Frontend Development" 
-     :attrs ["UI Frameworks" "State Management"])
+     :attrs ["UI Frameworks" "State Management"]
+     :link "/about-me#frontend-development")
     (feature
      :svg (svg/clojure)
      :name "Backend Development" 
-     :attrs ["Architectual Patterns" "Integration Tools"])
+     :attrs ["Architectual Patterns" "Integration Tools"]
+     :link "/about-me#backend-development")
     (feature
      :svg (svg/google-cloud)
      :name "Cloud & Infrastructure" 
-     :attrs ["Google Cloud Platform" "DevOps Practices"])]])
+     :attrs ["Google Cloud Platform" "DevOps Practices"]
+     :link "/about-me#cloud-infrastructure")]])
 
 (defn skills-overview []
   [:section
@@ -123,9 +126,10 @@
         :src "/img/IMG_7142.jpg",
         :alt ""}]]]]])
 
-(defn skill [& {:keys [svg name desc attrs]}]
+(defn skill [& {:keys [id svg name desc attrs]}]
   [:section
-   {:class "bg-white"}
+   {:id id
+    :class "bg-white"}
    [:div 
     {:class "py-2 md:py-4"}
     [:div
@@ -159,6 +163,7 @@
   [:div
    {:class "px-4 pb-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pb-16"}
    (skill
+    :id "languages-paradigms"
     :svg (svg/code)
     :name "Languages & Paradigms"
     :desc "Developing software with Clojure, ClojureScript, and other modern languages and paradigms."
@@ -169,6 +174,7 @@
             {:attr-name "JavaScript"
              :attr-desc "Expertise in modern JavaScript development, including React and functional programming tools like Ramda."}])
    (skill
+    :id "frontend-development"
     :svg (svg/clojurescript)
     :name "Frontend Development"
     :desc "Building interactive, responsive user interfaces with modern frontend technologies."
@@ -177,6 +183,7 @@
             {:attr-name "State Management"
              :attr-desc "Extensive use of Re-frame for predictable state management."}])
    (skill
+    :id "backend-development"
     :svg (svg/clojure)
     :name "Backend Development"
     :desc "Designing and implementing scalable, maintainable backend systems with Clojure and other tools."
@@ -185,6 +192,7 @@
             {:attr-name "Integration Tools"
              :attr-desc "Knowledge of messaging systems like Google Pub/Sub for event-driven applications."}])
    (skill
+    :id "cloud-infrastructure"
     :svg (svg/google-cloud)
     :name "Cloud & Infrastructure"
     :desc "Deploying and managing cloud-based systems with Google Cloud Platform and other cloud services."

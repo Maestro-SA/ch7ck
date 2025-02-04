@@ -18,7 +18,7 @@
      {:x-data "{ showModal : false }"}
      [:a
       {"@click" "showModal = !showModal"
-       :class "text-blue-500 inline-flex items-center"}
+       :class "text-blue-500 inline-flex items-center cursor-pointer"}
       "Read"
       (svg/arrow)]
      (modals/blog-modal
