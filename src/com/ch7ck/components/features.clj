@@ -6,7 +6,7 @@
 (defn feature [& {:keys [svg name attrs link]}]
   [:div
    [:div
-    {:class "flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-metagray"}
+    {:class "flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-gray-100 shadow-2xl"}
     [:div {:class "p-3"} 
      svg]]
    [:h6 {:class "mb-2 font-semibold leading-5"} name]
@@ -142,7 +142,7 @@
       [:div 
        {:class "w-14 h-14 mb-2"}
        [:span
-       {:class "hidden md:inline-block p-2 bg-metagray rounded-xl"}
+       {:class "hidden md:inline-block p-2 bg-gray-100 rounded-xl"}
        svg]]
       (shared/heading name)
       [:p
@@ -153,7 +153,7 @@
        (for [{:keys [attr-name attr-desc]} attrs]
          [:li
           {:class "flex items-start"}
-          [:span
+          [:div
            {:class "-ml-10 mr-1"}
            (svg/lightning)]
           [:div
@@ -204,47 +204,72 @@
             {:attr-name "DevOps Practices"
              :attr-desc "Familiar with CI/CD automation and containerization using Docker."}])])
 
-(defn human-feature [& {:keys [svg name desc]}]
-  [:div
-   {:class "xl:w-1/3 md:w-1/2 p-4"}
-   [:div
-    {:class "border border-gray-300 p-6 rounded-xl"}
-    [:div
-     {:class "w-14 h-14 inline-flex items-center justify-center rounded-xl bg-metagray text-gray-500 mb-4"}
-     [:span {:class "p-3"}
-      svg]]
-    [:h2
-     {:class "text-xl font-medium title-font mb-2"}
-     name]
-    [:p
-     {:class "leading-relaxed text-md"}
-     desc]]])
 
-(defn human-features [] 
-  [:div
-   [:section
-    {:class "text-metagray bg-white"}
+(defn human-features []
+  [:section
+   {:class "text-metagray bg-white"}
+   [:div
+    {:class "px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-16"}
     [:div
-     {:class "px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-16"}
+     {:class "p-8"}
      [:div
-      {:class "flex flex-wrap flex-col w-full mb-20 "}
-      [:h1
-       {:class "title-font mb-2 text-4xl font-bold leading-10 tracking-tight text-left md:leading-none md:text-5xl"}
-       "Human"]
+      {:class "flex felx-col items-center justify-center"}
+      [:span
+       {:class "rounded-full bg-gray-500 px-2 py-1 text-white uppercase text-sm"}
+       "New"]]
+     [:h1
+      {:class "text-4xl font-medium text-gray-700 text-center mt-6"}
+      "Human"]
+     [:p
+      {:class "text-center mt-6 text-lg font-light text-gray-500"}
+      "I'm a software engineer with a passion for building scalable, maintainable systems that solve real-world problems. I specialize in Clojure and ClojureScript development, with experience in frontend and backend technologies."]]
+    [:div
+     {:class "grid grid-cols-1 md:grid-cols-3"}
+     [:div
+      {:class "p-8"}
+      [:div
+       {:class "bg-gray-100 rounded-full w-16 h-16 flex justify-center items-center text-gray-500 shadow-2xl p-3"}
+       (svg/collaboration)]
+      [:h2
+       {:class "uppercase mt-6 text-gray-500 font-medium mb-3"}
+       "Team Collaboration"]
       [:p
-       {:class "lg:w-1/2 w-full leading-relaxed text-base"}
-       "I'm a software engineer with a passion for building scalable, maintainable systems that solve real-world problems. I specialize in Clojure and ClojureScript development, with experience in frontend and backend technologies."]]
+       {:class "font-light text-sm text-gray-500 mb-3"}
+       "Collaborative team player with a strong focus on effective communication and teamwork."]
+      [:a
+       {:class "text-gray-500 flex items-center hover:text-gray-600",
+        :href "/"}
+       "Read more"
+       (svg/greater->)]]
      [:div
-      {:class "flex flex-wrap -m-4"}
-      (human-feature
-       :svg (svg/collaboration)
-       :name "Team Collaboration"
-       :desc "Collaborative team player with a strong focus on effective communication and teamwork.")
-      (human-feature
-       :svg (svg/mentorship)
-       :name "Mentorship"
-       :desc "Experienced in mentoring and guiding junior developers to enhance team capabilities.")
-      (human-feature
-       :svg (svg/code)
-       :name "Clean Code Advocate"
-       :desc "Passionate about writing clean, maintainable, and functional code for long-term success.")]]]])
+      {:class "p-8"}
+      [:div
+       {:class "bg-zinc-100 rounded-full w-16 h-16 flex justify-center items-center text-zinc-500 shadow-2xl p-3"}
+       (svg/mentorship)]
+      [:h2
+       {:class "uppercase mt-6 text-zinc-500 font-medium mb-3"}
+       "Mentorship"]
+      [:p
+       {:class "font-light text-sm text-gray-500 mb-3"}
+       "Experienced in mentoring and guiding junior developers to enhance team capabilities."]
+      [:a
+       {:class "text-zinc-500 flex items-center hover:text-zin-600",
+        :href "/"}
+       "Read more"
+       (svg/greater->)]]
+     [:div
+      {:class "p-8"}
+      [:div
+       {:class "bg-neutral-100 rounded-full w-16 h-16 flex justify-center items-center text-neutral-500 shadow-2xl p-3"}
+       (svg/code)]
+      [:h2
+       {:class "uppercase mt-6 text-neutral-500 font-medium mb-3"}
+       "Clean Code Advocate"]
+      [:p
+       {:class "font-light text-sm text-gray-500 mb-3"}
+       "Passionate about writing clean, maintainable, and functional code for long-term success."]
+      [:a
+       {:class "text-neutral-500 flex items-center hover:text-neutral-600",
+        :href "/"}
+       "Read more"
+       (svg/greater->)]]]]])
