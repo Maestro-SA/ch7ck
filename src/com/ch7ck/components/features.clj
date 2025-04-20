@@ -3,69 +3,6 @@
             [com.ch7ck.components.shared :as shared]))
 
 
-(defn feature [& {:keys [svg name attrs link]}]
-  [:div
-   [:div
-    {:class "flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-gray-100 shadow-2xl"}
-    [:div {:class "p-3"} 
-     svg]]
-   [:h6 {:class "mb-2 font-semibold leading-5"} name]
-   [:ul
-    {:class "mb-4 -ml-1 space-y-2"}
-    (for [attr attrs]
-      [:li
-       {:class "flex items-start"}
-       [:span
-        {:class "-ml-10 mr-1"}
-        (svg/lightning)]
-       attr])]
-   [:a
-    {:href link,
-     :aria-label "",
-     :class "inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-metagray hover:text-metagray"}
-    [:p
-     {:class "flex items-center hover:space-x-2"}
-     "Learn more"
-     (svg/arrow)]]])
-
-(defn features []
-  [:div
-   {:class "px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-16"}
-   [:div
-    {:class "flex flex-col mb-6 lg:flex-row md:mb-10"}
-    [:div
-     {:class "lg:w-1/2"}
-     [:h2
-      {:class "max-w-md mb-6 text-4xl font-bold tracking-tight text-metagray sm:text-5xl sm:leading-none xl:max-w-lg"}
-      "Technical Landscape"]]
-    [:div
-     {:class "lg:w-1/2"}
-     [:p
-      {:class "text-base text-gray-700 md:text-lg"}
-      "Showcasing expertise in modern tools, frameworks, and best practices for scalable software development."]]]
-   [:div
-    {:class "grid gap-8 row-gap-10 sm:grid-cols-2 lg:grid-cols-4"}
-    (feature
-     :svg (svg/lisp)
-     :name "Languages & Paradigms" 
-     :attrs ["Clojure" "ClojureScript"]
-     :link "/about-me#languages-paradigms")
-    (feature
-     :svg (svg/clojurescript)
-     :name "Frontend Development" 
-     :attrs ["UI Frameworks" "State Management"]
-     :link "/about-me#frontend-development")
-    (feature
-     :svg (svg/clojure)
-     :name "Backend Development" 
-     :attrs ["Architectual Patterns" "Integration Tools"]
-     :link "/about-me#backend-development")
-    (feature
-     :svg (svg/google-cloud)
-     :name "Cloud & Infrastructure" 
-     :attrs ["Google Cloud Platform" "DevOps Practices"]
-     :link "/about-me#cloud-infrastructure")]])
-
 (defn skills-overview []
   [:section
    {:class "bg-white"}
@@ -79,7 +16,7 @@
       [:div
        {:class "space-y-3"}
        [:span
-        {:class "inline-block p-3 text-metagray bg-metagray rounded-xl"}
+        {:class "inline-block p-3 text-metagray rounded-full bg-gray-100 shadow-2xl"}
         (svg/laptop-code)]
        [:h1
         {:class "text-xl font-semibold text-gray-700 capitalize"}
@@ -90,7 +27,7 @@
       [:div
        {:class "space-y-3"}
        [:span
-        {:class "inline-block p-3 text-metagray bg-metagray rounded-xl"}
+        {:class "inline-block p-3 text-metagray rounded-full bg-gray-100 shadow-2xl"}
         (svg/frontend)]
        [:h1
         {:class
@@ -102,7 +39,7 @@
       [:div
        {:class "space-y-3"}
        [:span
-        {:class "inline-block p-3 text-metagray bg-metagray rounded-xl"}
+        {:class "inline-block p-3 text-metagray rounded-full bg-gray-100 shadow-2xl"}
         (svg/backend)]
        [:h1
         {:class
@@ -114,7 +51,7 @@
       [:div
        {:class "space-y-3"}
        [:span
-        {:class "inline-block p-3 text-metagray bg-metagray rounded-xl"}
+        {:class "inline-block p-3 text-metagray rounded-full bg-gray-100 shadow-2xl"}
         (svg/cloud)]
        [:h1
         {:class "text-xl font-semibold text-gray-700 capitalize"}
@@ -133,22 +70,17 @@
   [:section
    {:id id
     :class "bg-white"}
-   [:div 
+   [:div
     {:class "py-2 md:py-4"}
     [:div
      {:class "flex flex-wrap items-center"}
      [:div
       {:class "w-full mx-auto"}
-      [:div 
-       {:class "w-14 h-14 mb-2"}
-       [:span
-       {:class "hidden md:inline-block p-2 bg-gray-100 rounded-xl"}
-       svg]]
       (shared/heading name)
       [:p
        {:class "text-xl font-light leading-relaxed mt-4 mb-4 text-metagray"}
        desc]
-      [:ul 
+      [:ul
        {:class "text-lg mb-4 -ml-1 space-y-2"}
        (for [{:keys [attr-name attr-desc]} attrs]
          [:li
@@ -205,6 +137,70 @@
              :attr-desc "Familiar with CI/CD automation and containerization using Docker."}])])
 
 
+(defn feature [& {:keys [svg name attrs link]}]
+  [:div
+   [:div
+    {:class "flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-gray-100 shadow-2xl"}
+    [:div {:class "p-3"} 
+     svg]]
+   [:h6 {:class "mb-2 text-gray-500 font-medium uppercase leading-5"} name]
+   [:ul
+    {:class "mb-4 -ml-1 space-y-2"}
+    (for [attr attrs]
+      [:li
+       {:class "flex items-start"}
+       [:span
+        {:class "-ml-10 mr-1 text-gray-500"}
+        (svg/lightning)]
+       attr])]
+   [:a
+    {:href link,
+     :aria-label "",
+     :class "inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-metagray hover:text-metagray"}
+    [:p
+     {:class "flex items-center hover:space-x-2"}
+     "Learn more"
+     (svg/arrow)]]])
+
+(defn features []
+  [:div
+   {:class "px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-16"}
+   [:div
+    {:class "flex flex-col mb-6 lg:flex-row md:mb-10"}
+    [:div
+     {:class "lg:w-1/2"}
+     [:h2
+      {:class "max-w-md mb-6 text-4xl font-medium tracking-tight text-metagray sm:text-5xl sm:leading-none xl:max-w-lg"}
+      "Technical Landscape"]]
+    [:div
+     {:class "lg:w-1/2"}
+     [:p
+      {:class "text-base text-gray-700 md:text-lg"}
+      "Showcasing expertise in modern tools, frameworks, and best practices for scalable software development."]]]
+   [:div
+    {:class "grid gap-8 row-gap-10 sm:grid-cols-2 lg:grid-cols-4"}
+    (feature
+     :svg (svg/lisp)
+     :name "Languages & Paradigms" 
+     :attrs ["Clojure" "ClojureScript"]
+     :link "/about-me#languages-paradigms")
+    (feature
+     :svg (svg/clojurescript)
+     :name "Frontend Development" 
+     :attrs ["UI Frameworks" "State Management"]
+     :link "/about-me#frontend-development")
+    (feature
+     :svg (svg/clojure)
+     :name "Backend Development" 
+     :attrs ["Architectual Patterns" "Integration Tools"]
+     :link "/about-me#backend-development")
+    (feature
+     :svg (svg/google-cloud)
+     :name "Cloud & Infrastructure" 
+     :attrs ["Google Cloud Platform" "DevOps Practices"]
+     :link "/about-me#cloud-infrastructure")]])
+
+
 (defn human-features []
   [:section
    {:class "text-metagray bg-white"}
@@ -213,7 +209,7 @@
     [:div
      {:class "p-8"}
      [:div
-      {:class "flex felx-col items-center justify-center"}
+      {:class "flex flex-col items-center justify-center"}
       [:span
        {:class "rounded-full bg-gray-500 px-2 py-1 text-white uppercase text-sm"}
        "New"]]
