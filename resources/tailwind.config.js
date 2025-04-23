@@ -28,7 +28,7 @@ module.exports = {
         typing: "typing 2s steps(20) infinite alternate, blink .7s infinite"
       },
       colors: {
-        'metagray': "#5f5f5f"
+        'metagray': "#131315"
       }
     },
   },

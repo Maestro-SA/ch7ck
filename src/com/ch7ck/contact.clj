@@ -23,7 +23,7 @@
      [:div
       {:class "flex flex-col items-center justify-center text-center"}
       [:span
-       {:class "p-3 text-black rounded-full bg-gray-600"}
+       {:class "p-3 text-black rounded-full bg-gray-100 shadow-2xl"}
        (svgs/email)]
       [:h2
        {:class "mt-4 text-lg font-medium text-gray-900"}
@@ -38,7 +38,7 @@
      [:div
       {:class "flex flex-col items-center justify-center text-center"}
       [:span
-       {:class "p-3 text-blue-500 rounded-full bg-gray-600"}
+       {:class "p-3 text-blue-500 rounded-full bg-gray-100 shadow-2xl"}
        (svgs/linkedin)]
       [:h2
        {:class "mt-4 text-lg font-medium text-gray-900"}
@@ -53,7 +53,7 @@
      [:div
       {:class "flex flex-col items-center justify-center text-center"}
       [:span
-       {:class "p-3 text-black rounded-full bg-gray-600"}
+       {:class "p-3 text-black rounded-full bg-gray-100 shadow-2xl"}
        (svgs/phone)]
       [:h2
        {:class "mt-4 text-lg font-medium text-gray-900"}

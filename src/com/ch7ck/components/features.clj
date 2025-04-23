@@ -137,7 +137,7 @@
              :attr-desc "Familiar with CI/CD automation and containerization using Docker."}])])
 
 
-(defn feature [& {:keys [svg name attrs link]}]
+#_(defn feature [& {:keys [svg name attrs link]}]
   [:div
    [:div
     {:class "flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-gray-100 shadow-2xl"}
@@ -162,43 +162,116 @@
      "Learn more"
      (svg/arrow)]]])
 
+#_(defn features []
+  [:section
+   [:div
+    {:class "px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-16"}
+    [:div
+     {:class "flex flex-col mb-6 p-8 lg:flex-row md:mb-10"}
+     [:div
+      {:class "lg:w-1/2"}
+      [:h2
+       {:class "max-w-md mb-6 text-4xl font-medium tracking-tight text-metagray sm:text-5xl sm:leading-none xl:max-w-lg"}
+       "Technical Landscape"]]
+     [:div
+      {:class "lg:w-1/2"}
+      [:p
+       {:class "text-base text-gray-700 md:text-lg"}
+       "Showcasing expertise in modern tools, frameworks, and best practices for scalable software development."]]]
+    [:div
+     {:class "grid gap-8 row-gap-10 p-8 sm:grid-cols-2 lg:grid-cols-4"}
+     (feature
+      :svg (svg/lisp)
+      :name "Languages & Paradigms"
+      :attrs ["Clojure" "ClojureScript"]
+      :link "/about-me#languages-paradigms")
+     (feature
+      :svg (svg/clojurescript)
+      :name "Frontend Development"
+      :attrs ["UI Frameworks" "State Management"]
+      :link "/about-me#frontend-development")
+     (feature
+      :svg (svg/clojure)
+      :name "Backend Development"
+      :attrs ["Architectual Patterns" "Integration Tools"]
+      :link "/about-me#backend-development")
+     (feature
+      :svg (svg/google-cloud)
+      :name "Cloud & Infrastructure"
+      :attrs ["Google Cloud Platform" "DevOps Practices"]
+      :link "/about-me#cloud-infrastructure")]]])
+
+
 (defn features []
   [:div
-   {:class "px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-16"}
+   {:class "px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"}
    [:div
-    {:class "flex flex-col mb-6 lg:flex-row md:mb-10"}
+    {:class "max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12"}
+    [:h2
+     {:class "max-w-lg mb-6 font-sans text-4xl font-medium leading-none tracking-tight text-gray-700 sm:text-4xl md:mx-auto"}
+     [:span
+      {:class "relative inline-block"}
+      [:svg
+       {:viewBox "0 0 52 24",
+        :fill "currentColor",
+        :class "absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-gray-300 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"}
+       [:defs
+        [:pattern
+         {:id "4314d5df-c4ea-4854-be21-f1fdbb6fe951",
+          :x "0",
+          :y "0",
+          :width ".135",
+          :height ".30"}
+         [:circle {:cx "1", :cy "1", :r ".7"}]]]
+       [:rect
+        {:fill "url(#4314d5df-c4ea-4854-be21-f1fdbb6fe951)",
+         :width "52",
+         :height "24"}]]
+      [:span {:class "relative"} "Fin-"]]
+     "tech Industry"]
+    [:p
+     {:class "text-base text-gray-700 md:text-lg"}
+     "Building scalable, maintainable systems with modern tools and frameworks."]]
+   [:div
+    {:class "grid max-w-4xl gap-12 row-gap-10 mx-auto lg:grid-cols-2"}
     [:div
-     {:class "lg:w-1/2"}
-     [:h2
-      {:class "max-w-md mb-6 text-4xl font-medium tracking-tight text-metagray sm:text-5xl sm:leading-none xl:max-w-lg"}
-      "Technical Landscape"]]
-    [:div
-     {:class "lg:w-1/2"}
+     {:class "lg:max-w-md"}
+     [:div
+      {:class "flex items-center justify-center w-12 h-12 mb-4 rounded-full shadow-lg bg-gray-200"}
+      [:img
+       {:class "w-10 sm:w-20",
+        :src "/img/simply.png",
+        :alt ""}]]
+     [:h6 {:class "mb-3 text-2xl font-medium text-gray-700 leading-5"} "Simply"]
      [:p
-      {:class "text-base text-gray-700 md:text-lg"}
-      "Showcasing expertise in modern tools, frameworks, and best practices for scalable software development."]]]
-   [:div
-    {:class "grid gap-8 row-gap-10 sm:grid-cols-2 lg:grid-cols-4"}
-    (feature
-     :svg (svg/lisp)
-     :name "Languages & Paradigms" 
-     :attrs ["Clojure" "ClojureScript"]
-     :link "/about-me#languages-paradigms")
-    (feature
-     :svg (svg/clojurescript)
-     :name "Frontend Development" 
-     :attrs ["UI Frameworks" "State Management"]
-     :link "/about-me#frontend-development")
-    (feature
-     :svg (svg/clojure)
-     :name "Backend Development" 
-     :attrs ["Architectual Patterns" "Integration Tools"]
-     :link "/about-me#backend-development")
-    (feature
-     :svg (svg/google-cloud)
-     :name "Cloud & Infrastructure" 
-     :attrs ["Google Cloud Platform" "DevOps Practices"]
-     :link "/about-me#cloud-infrastructure")]])
+      {:class "mb-6 text-sm text-gray-900"}
+      "Long term insurer providing a range of insureance products, including life insurance, disability insurance, and funeral cover."]
+     [:a
+      {:href "https://simply.co.za/",
+       :aria-label "",
+       :class "inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"}
+      "Learn more"]]
+    [:div
+     {:class "lg:max-w-md"}
+     [:div
+      {:class
+       "flex items-center justify-center w-12 h-12 mb-4 rounded-full shadow-lg bg-gray-200"}
+      (svg/clojure)]
+     [:h6 {:class "mb-3 text-2xl font-medium text-gray-700 leading-5"} "Software Engineer"]
+     [:p
+      {:class "mb-6 text-sm text-gray-900"}
+      "Responsible for parts of the collections domain, including the collections API and the collections web application."]
+     [:div
+      {:class "grid grid-cols-2 grid-rows-2 gap-2 row-gap-2"}
+      (for [skill ["Clojure"
+                   "ClojureScript"
+                   "Google Cloud Platform"]]
+        [:li
+         {:class "flex items-start"}
+         [:span
+          {:class "mr-1"}
+          (svg/lightning)]
+         skill])]]]])
 
 
 (defn human-features []
@@ -209,10 +282,7 @@
     [:div
      {:class "p-8"}
      [:div
-      {:class "flex flex-col items-center justify-center"}
-      [:span
-       {:class "rounded-full bg-gray-500 px-2 py-1 text-white uppercase text-sm"}
-       "New"]]
+      {:class "flex flex-col items-center justify-center"}]
      [:h1
       {:class "text-4xl font-medium text-gray-700 text-center mt-6"}
       "Human"]
