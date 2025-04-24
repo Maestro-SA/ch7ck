@@ -238,25 +238,38 @@
      {:class "lg:max-w-md"}
      [:div
       {:class "flex items-center justify-center w-12 h-12 mb-4 rounded-full shadow-lg bg-gray-200"}
+      (svg/clojure)]
+     [:h6 {:class "mb-3 text-2xl font-medium text-gray-700 leading-5"} "Freelance"]
+     [:p
+      {:class "mb-6 text-sm text-gray-900"}
+      "Have worked on various projects, including a web application for a local business and a personal project to improve my skills."]
+     [:div
+      {:class "flex items-center mb-4"}
+      [:div
+       {:class "mr-6"}
+       [:a
+        {:href "https://www.mgobhozifuneralservices.co.za/",
+         :target "_blank",
+         :rel "noopener noreferrer"}
+        [:img
+         {:class "w-32 sm:w-40"
+          :src "img/mghobhozi.png"}]]]
+      [:div
+       [:a
+        {:href "https://tempoluxury.co.za/",
+         :target "_blank",
+         :rel "noopener noreferrer"}
+        [:img
+         {:class "w-32 sm:w-40"
+          :src "img/tempo.png"}]]]]]
+    [:div
+     {:class "lg:max-w-md"}
+     [:div
+      {:class "flex items-center justify-center w-12 h-12 mb-4 rounded-full shadow-lg bg-gray-200"}
       [:img
        {:class "w-10 sm:w-20",
         :src "/img/simply.png",
         :alt ""}]]
-     [:h6 {:class "mb-3 text-2xl font-medium text-gray-700 leading-5"} "Simply"]
-     [:p
-      {:class "mb-6 text-sm text-gray-900"}
-      "Long term insurer providing a range of insureance products, including life insurance, disability insurance, and funeral cover."]
-     [:a
-      {:href "https://simply.co.za/",
-       :aria-label "",
-       :class "inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"}
-      "Learn more"]]
-    [:div
-     {:class "lg:max-w-md"}
-     [:div
-      {:class
-       "flex items-center justify-center w-12 h-12 mb-4 rounded-full shadow-lg bg-gray-200"}
-      (svg/clojure)]
      [:h6 {:class "mb-3 text-2xl font-medium text-gray-700 leading-5"} "Software Engineer"]
      [:p
       {:class "mb-6 text-sm text-gray-900"}
@@ -265,6 +278,8 @@
       {:class "grid grid-cols-2 grid-rows-2 gap-2 row-gap-2"}
       (for [skill ["Clojure"
                    "ClojureScript"
+                   "JavaScript"
+                   "Metabase"
                    "Google Cloud Platform"]]
         [:li
          {:class "flex items-start"}
@@ -272,6 +287,22 @@
           {:class "mr-1"}
           (svg/lightning)]
          skill])]]]])
+
+
+(defn human-feature [&  {:keys [svg title desc]}]
+  [:div
+   {:class "p-8"}
+   [:div
+    {:class "bg-gray-100 rounded-full w-16 h-16 flex justify-center items-center text-gray-500 shadow-2xl p-3"} svg]
+   [:h2
+    {:class "uppercase mt-6 text-gray-500 font-medium mb-3"} title]
+   [:p
+    {:class "font-light text-sm text-gray-500 mb-3"} desc]
+   [:a
+    {:class "text-gray-500 flex items-center hover:text-gray-600",
+     :href "/"}
+    "Read more"
+    (svg/greater->)]])
 
 
 (defn human-features []
@@ -291,51 +322,15 @@
       "I'm a software engineer with a passion for building scalable, maintainable systems that solve real-world problems. I specialize in Clojure and ClojureScript development, with experience in frontend and backend technologies."]]
     [:div
      {:class "grid grid-cols-1 md:grid-cols-3"}
-     [:div
-      {:class "p-8"}
-      [:div
-       {:class "bg-gray-100 rounded-full w-16 h-16 flex justify-center items-center text-gray-500 shadow-2xl p-3"}
-       (svg/collaboration)]
-      [:h2
-       {:class "uppercase mt-6 text-gray-500 font-medium mb-3"}
-       "Team Collaboration"]
-      [:p
-       {:class "font-light text-sm text-gray-500 mb-3"}
-       "Collaborative team player with a strong focus on effective communication and teamwork."]
-      [:a
-       {:class "text-gray-500 flex items-center hover:text-gray-600",
-        :href "/"}
-       "Read more"
-       (svg/greater->)]]
-     [:div
-      {:class "p-8"}
-      [:div
-       {:class "bg-zinc-100 rounded-full w-16 h-16 flex justify-center items-center text-zinc-500 shadow-2xl p-3"}
-       (svg/mentorship)]
-      [:h2
-       {:class "uppercase mt-6 text-zinc-500 font-medium mb-3"}
-       "Mentorship"]
-      [:p
-       {:class "font-light text-sm text-gray-500 mb-3"}
-       "Experienced in mentoring and guiding junior developers to enhance team capabilities."]
-      [:a
-       {:class "text-zinc-500 flex items-center hover:text-zin-600",
-        :href "/"}
-       "Read more"
-       (svg/greater->)]]
-     [:div
-      {:class "p-8"}
-      [:div
-       {:class "bg-neutral-100 rounded-full w-16 h-16 flex justify-center items-center text-neutral-500 shadow-2xl p-3"}
-       (svg/code)]
-      [:h2
-       {:class "uppercase mt-6 text-neutral-500 font-medium mb-3"}
-       "Clean Code Advocate"]
-      [:p
-       {:class "font-light text-sm text-gray-500 mb-3"}
-       "Passionate about writing clean, maintainable, and functional code for long-term success."]
-      [:a
-       {:class "text-neutral-500 flex items-center hover:text-neutral-600",
-        :href "/"}
-       "Read more"
-       (svg/greater->)]]]]])
+     (human-feature
+      :svg (svg/collaboration)
+      :title "Team Collaboration"
+      :desc "Collaborative team player with a strong focus on effective communication and teamwork.") 
+     (human-feature
+      :svg (svg/mentorship)
+      :title "Mentorship"
+      :desc "Experienced in mentoring and guiding junior developers to enhance team capabilities.")
+     (human-feature
+      :svg (svg/code)
+      :title "Clean Code Advocate"
+      :desc "Passionate about writing clean, maintainable, and functional code for long-term success.")]]])
